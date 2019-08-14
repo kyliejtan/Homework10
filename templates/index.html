@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href='/static/style.css' />
+</head>
+
+<body>
+  <div class="d-xl-flex">
+    <div class="p-3 flex-fill">
+      <div class="jumbotron text-center">
+        <h1>Mission to Mars</h1>
+        <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="d-xl-flex">
+    <div class="p-3 flex-fill">
+      <h2>Latest Mars News</h2>
+      <a target="_self" href={{mars.news_url}} style="color: black;">
+        <h3>{{ mars.news_title }}</h3>
+      </a>
+      <p>{{ mars.news_p }}</p>
+    </div>
+  </div>
+  <div class="d-xl-flex">
+    <div class="p-3 flex-fill">
+      <h2>Featured Mars Image</h2>
+      <img class="featured_mars_image" src={{mars.featured_image_url}} style="width: 100%"/>
+    </div>
+    <div class="p-3 flex-fill">
+      <div class="border">
+        <div style="padding: 20px;">
+          <h4>Current Weather on Mars</h4>
+          <p>
+            {{ mars.mars_weather }}
+          </p>
+        </div>
+      </div>
+      <br />
+      <h4>Mars Facts</h4>
+      <div>
+        {{ mars.mars_facts_table | safe}}
+      </div>
+    </div>
+  </div>
+  <h3 style="text-align: center;">Mars Hemispheres</h3>
+  <hr style="width: 97%"/>
+  <div class="d-xl-flex">
+    <div class="p-3 flex-fill" id="hemisphere_container">
+      <img class="hemisphere" src="{{mars.hemisphere_image_urls.0.img_url}}"/>
+      <h3 style="padding-top: 10px;">{{mars.hemisphere_image_urls.0.title}}</h3>
+    </div>
+    <div class="p-3 flex-fill" id="hemisphere_container">
+      <img class="hemisphere" src="{{mars.hemisphere_image_urls.1.img_url}}"/>
+      <h3 style="padding-top: 10px;">{{mars.hemisphere_image_urls.0.title}}</h3>
+    </div>
+  </div>
+  <div class="d-xl-flex">
+    <div class="p-3 flex-fill" id="hemisphere_container">
+      <img class="hemisphere" src="{{mars.hemisphere_image_urls.2.img_url}}"/>
+      <h3 style="padding-top: 10px;">{{mars.hemisphere_image_urls.0.title}}</h3>
+    </div>
+    <div class="p-3 flex-fill" id="hemisphere_container">
+      <img class="hemisphere" src="{{mars.hemisphere_image_urls.3.img_url}}"/>
+      <h3 style="padding-top: 10px;">{{mars.hemisphere_image_urls.0.title}}</h3>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+.border {
+  border: solid;
+  border-radius: 5px;
+  border-color: lightgrey;"
+}
+
+.featured_mars_image {
+  width: 100%;
+}
+
+#hemisphere_container {
+  margin: 20px;
+  border: solid;
+  border-width: thin;
+  border-radius: 5px;
+  border-color: lightgrey;
+}
+
+.hemisphere {
+  width: 100%;
+}
